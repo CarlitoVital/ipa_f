@@ -1,18 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div id="nav" class="navbar">
+    <!-- links to all the sites that are shown in menu -->
+    <router-link :to="{ name: 'LinkList' }">Links</router-link> |
+    <router-link :to="{ name: 'LinkCreate' }">Link Create</router-link> |
+    <router-link :to="{ name: 'Info' }">Info</router-link> |
+    <router-link :to="{ name: 'Impressum' }">Impressum</router-link> |
+  </div>
+  <!-- the view that is selected at the moment will be rendered inside this tag -->
+  <router-view></router-view>
 </template>
+ 
 
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
-
-export default {
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-};
-</script>
 
 <style lang="scss">
 #app {
