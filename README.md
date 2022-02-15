@@ -2,12 +2,14 @@
 
 ## Project setup
 ```
-yarn install
+Schreiben Sie "npm install" oder "npm i" in das Terminal um die nötigen node module zu installieren.
+
 ```
 
-### Compiles and hot-reloads for development
+### Projekt auf funktionieren testen
 ```
-yarn serve
+Schreiben Sie "npm run serve" in das Terminal. Sie sollten jetzt unter http://localhost:1337/ im Browser das Projekt sehen können. Vergessen Sie nicht, dass Strapi ebenfalls laufen muss, sonst kann kein Content von der Datenbank abgefragt werden. Dieses Respository ist nur das Frontend des Webprojektes.
+
 ```
 
 ### Compiles and minifies for production
