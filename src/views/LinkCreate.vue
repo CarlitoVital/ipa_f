@@ -4,7 +4,11 @@
   <form @submit.prevent="createLink">
     <label for="link">URL</label>
     <input type="text" id="link" v-model="link.url" />
-    <button class="createButton" type="submit">create <b>+</b></button>
+    <button type="button" @click="getMetaDataFromUrl">autofill</button>
+    <input type="text" id="link" v-model="link.title" />
+    <input type="text" id="link" v-model="link.description" />
+    <input type="text" id="link" v-model="link.image" />
+    <button type="submit">create <b>+</b></button>
   </form>
 </template>
 
@@ -33,6 +37,16 @@ export default {
         .catch((error) => {
           this.error = error;
         });
+    },
+    getMetaDataFromUrl() {
+      LinkService.postUrlForMetaData(this.link.url).then((response) => {
+        console.log(response);
+        const metaData = response.data.data;
+        console.log(metaData);
+        this.link.title = metaData.title;
+        this.link.description = metaData.description;
+        this.link.image = metaData.image;
+      });
     },
   },
 };

@@ -30,4 +30,7 @@ export default {
   deleteLink(id) {
     return apiClient.delete(`/links/${id}`);
   },
+  postUrlForMetaData(url) {
+    return apiClient.post("/urldata", { url });
+  },
 };

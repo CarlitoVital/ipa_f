@@ -1,13 +1,14 @@
 <template>
   <h1>Link Editieren</h1>
   <form v-if="link" @submit.prevent="updateLink">
-    <label for="link">URL</label>
+    <label for="link">{{ link.attributes.url }}</label>
     <input type="text" id="link" v-model="link.attributes.url" />
     <button type="submit">Save</button>
   </form>
 </template>
 
 <script>
+// import of the API Services, which are defined in the linked file
 import LinkService from "../services/LinkService.js";
 
 export default {

@@ -11,6 +11,7 @@ import LinkService from "@/services/LinkService.js";
 import LinkCard from "@/components/LinkCard.vue";
 
 export default {
+  name: "LinkList",
   components: {
     LinkCard,
   },
@@ -26,7 +27,6 @@ export default {
         console.log(response);
         this.links = response.data.data;
       })
-
       .catch((error) => {
         console.log(error);
       });

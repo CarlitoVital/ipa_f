@@ -24,8 +24,9 @@ const routes = [
     component: LinkCreate,
   },
   {
-    path: "/link/edit",
+    path: "/link/:id",
     name: "LinkEdit",
+    props: true,
     component: LinkEdit,
   },
   {
