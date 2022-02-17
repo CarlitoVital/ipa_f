@@ -4,6 +4,7 @@ import LinkList from "../views/LinkList.vue";
 import Info from "../views/Info.vue";
 import LinkCreate from "../views/LinkCreate.vue";
 import LinkEdit from "../views/LinkEdit.vue";
+import LinkDetails from "../views/LinkDetails.vue";
 import Impressum from "../views/Impressum.vue";
 
 // array of all pathe definitions, so they can be used inside the app
@@ -24,10 +25,16 @@ const routes = [
     component: LinkCreate,
   },
   {
-    path: "/link/:id",
+    path: "/link/:id/edit",
     name: "LinkEdit",
     props: true,
     component: LinkEdit,
+  },
+  {
+    path: "/link/:id/details",
+    name: "LinkDetails",
+    props: true,
+    component: LinkDetails,
   },
   {
     path: "/link/impressum",

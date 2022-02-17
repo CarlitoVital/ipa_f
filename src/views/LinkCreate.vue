@@ -1,14 +1,36 @@
 <template>
   <h1>Link Erstellen</h1>
 
-  <form @submit.prevent="createLink">
-    <label for="link">URL</label>
-    <input type="text" id="link" v-model="link.url" />
-    <button type="button" @click="getMetaDataFromUrl">autofill</button>
-    <input type="text" id="link" v-model="link.title" />
-    <input type="text" id="link" v-model="link.description" />
-    <input type="text" id="link" v-model="link.image" />
-    <button type="submit">create <b>+</b></button>
+  <form class="linkForm" @submit.prevent="createLink">
+    <div class="linkInputContainer">
+      <label class="linkInputLabel" for="link">URL</label>
+      <input class="linkInput" type="text" id="link" v-model="link.url" />
+    </div>
+    <button
+      class="buttonAutofill buttonGrey"
+      type="button"
+      @click="getMetaDataFromUrl"
+    >
+      Autofill
+    </button>
+    <div class="linkInputContainer">
+      <label class="linkInputLabel" for="title">Titel</label>
+      <input class="linkInput" type="text" id="title" v-model="link.title" />
+    </div>
+    <div class="linkInputContainer">
+      <label class="linkInputLabel" for="description">Beschreib</label>
+      <input
+        class="linkInput"
+        type="text"
+        id="description"
+        v-model="link.description"
+      />
+    </div>
+    <div class="linkInputContainer">
+      <label class="linkInputLabel" for="image">Bild</label>
+      <input class="linkInput" type="text" id="image" v-model="link.image" />
+    </div>
+    <button class="buttonSize buttonCreate" type="submit">Erstellen +</button>
   </form>
 </template>
 
@@ -39,6 +61,7 @@ export default {
         });
     },
     getMetaDataFromUrl() {
+      // posts url of link and gets meta tags from the backend
       LinkService.postUrlForMetaData(this.link.url).then((response) => {
         console.log(response);
         const metaData = response.data.data;
