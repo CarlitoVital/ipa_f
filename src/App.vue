@@ -2,7 +2,7 @@
   <div class="navContainer">
     <div id="nav" class="navbar">
       <div class="logoAdveryContainer">
-        <img class="logoAdvery" src="assets/logos/logo_advery.svg" />
+        <img class="logoAdvery" src="@/assets/logos/logo_advery.svg" />
       </div>
 
       <!-- links to all the sites that are shown in menu -->
@@ -16,7 +16,7 @@
         >Erstellen +</router-link
       >
       <div class="iconLeuchtturmContainer">
-        <img class="iconLeuchturm" src="assets/logos/logo_lt.svg" />
+        <img class="iconLeuchtturm" src="@/assets/logos/logo_lt.svg" />
       </div>
     </div>
   </div>
@@ -27,7 +27,9 @@
   </main>
 
   <footer>
-    <router-link :to="{ name: 'Impressum' }">Impressum</router-link>
+    <router-link class="footerLink" :to="{ name: 'Impressum' }"
+      >Impressum & Disclaimer</router-link
+    >
   </footer>
 </template>
 

@@ -30,6 +30,18 @@
       <label class="linkInputLabel" for="image">Bild</label>
       <input class="linkInput" type="text" id="image" v-model="link.image" />
     </div>
+    <div class="createCategoryContainer">
+      <h2 class="createCategoryTitle">Kategorie</h2>
+      <select id="category" name="category" v-model="link.category">
+        <option
+          :value="category.id"
+          v-for="category in categories"
+          :key="category.id"
+        >
+          {{ category.attributes.name }}
+        </option>
+      </select>
+    </div>
     <button class="buttonSize buttonCreate" type="submit">Erstellen +</button>
   </form>
 </template>
@@ -37,14 +49,20 @@
 <script>
 // import of the API Services, which are defined in the linked file
 import LinkService from "../services/LinkService.js";
+import CategoryService from "../services/CategoryService.js";
 
 export default {
   data() {
     return {
       // define array for post, fot fill data from html form in array
       link: {
+        title: "",
+        description: "",
         url: "",
+        category: "",
+        image: "",
       },
+      categories: [],
       error: null,
     };
   },
@@ -69,6 +87,13 @@ export default {
         this.link.title = metaData.title;
         this.link.description = metaData.description;
         this.link.image = metaData.image;
+      });
+    },
+    // use api request to get categories
+    getCategories() {
+      CategoryService.getCategories().then((response) => {
+        console.log("categories:", response.data.data);
+        this.categories = response.data.data;
       });
     },
   },

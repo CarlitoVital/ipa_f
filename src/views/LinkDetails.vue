@@ -1,15 +1,17 @@
 <template>
   <h1>Link Titel</h1>
   <div class="detailContainer">
-    <img src="" alt="" class="cardImage" />
+    <img
+      :src="link.attributes.image"
+      :alt="link.attributes.title"
+      class="cardImage"
+    />
     <div class="cardContent">
       <div class="cardTitleContainer">
-        <h2 class="cardTitle">Beschreibung</h2>
-        <img
-          :src="link.attributes.image"
-          :alt="link.attributes.title"
-          class="cardIcon"
-        />
+        <h2 class="cardDescription">{{ link.attributes.description }}</h2>
+        <i
+          :class="`${link.attributes.category_id.data?.attributes?.icon} cardIcon`"
+        ></i>
       </div>
       <div class="cardButtonsContainer">
         <p class="cardClicks">

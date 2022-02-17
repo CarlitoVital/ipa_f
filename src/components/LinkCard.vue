@@ -7,7 +7,7 @@
     />
     <div class="cardContent">
       <div class="cardTitleContainer">
-        <h2 class="cardTitle">Titel</h2>
+        <h2 class="cardTitle">{{ link.attributes.title }}</h2>
         <i
           :class="`${link.attributes.category_id.data?.attributes?.icon} cardIcon`"
         ></i>

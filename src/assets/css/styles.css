@@ -38,10 +38,13 @@ a, a:hover, a:focus, a:active {
   color: inherit;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/cera_pro_bold.eot'), url('../fonts/cera_pro_bold.ttf'), url('../fonts/cera_pro_bold.woff'), url('../fonts/cera_pro_bold.woff2'), url('../fonts/cera_pro_light.eot'), url('../fonts/cera_pro_light.ttf'), url('../fonts/cera_pro_light.woff'), url('../fonts/cera_pro_light.woff2') 
+}
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Cera Pro", sans-serif;
 }
 
 /* navigation */
@@ -71,11 +74,11 @@ body {
   width: 100%;
   height: 100%;
 }
-.logoLeuchtturmContainer {
+.iconLeuchtturmContainer {
   height: 7rem;
   width: 7rem;
 }
-.logoLeuchtturm {
+.iconLeuchtturm {
   height: 100%;
   width: 100%;
 }
@@ -136,6 +139,9 @@ body {
 .cardImage {
   height: 100%;
   width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  background: white;
 }
 .cardContent {
   width: 100%;
@@ -237,6 +243,11 @@ body {
   background: radial-gradient(#F2F2F2, #E9E9E9);
 }
 
+.cardDescription {
+  font-size: 1.6rem;
+  font-weight: lighter;
+}
+
 /* create  */
 
 .linkForm {
@@ -253,10 +264,6 @@ body {
   width: 100%;
   height: 5rem;
   margin-bottom: 5rem;
-}
-
-.linkInputContainer:last-of-type {
-  margin-bottom: 0;
 }
 
 .linkInputLabel {
@@ -309,4 +316,43 @@ body {
 .buttonCreate:hover {
   background: #AA2184;
   color: white;
+}
+
+.createCategoryContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.createCategoryTitle {
+  font-size: 2rem;
+}
+
+.createSingleCategoryContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 3rem;
+}
+
+/* footer */
+footer {
+  margin-top: 20rem;
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #F3EFA0;
+}
+
+.footerLink {
+  text-transform: uppercase;
+  font-size: 2rem;
 }

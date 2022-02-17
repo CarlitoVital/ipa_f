@@ -54,6 +54,7 @@
 <script>
 // import of the API Services, which are defined in the linked file
 import LinkService from "../services/LinkService.js";
+import CategoryService from "@/services/CategoryService.js";
 
 export default {
   props: ["id"],
@@ -61,6 +62,8 @@ export default {
     return {
       link: null,
       error: null,
+      categories: [],
+      selectedCategory: null,
     };
   },
   methods: {
@@ -81,6 +84,7 @@ export default {
           this.error = error;
         });
     },
+    // get meta data from strapi api to the site that has been choosen
     getMetaDataFromUrl() {
       LinkService.postUrlForMetaData(this.link.attributes.url).then(
         (response) => {
@@ -93,12 +97,18 @@ export default {
         }
       );
     },
+    getCategories() {
+      CategoryService.getCategories().then((response) => {
+        this.categories = response.data.data;
+      });
+    },
   },
   created() {
+    this.getCategories();
     LinkService.getLink(this.id)
       .then((response) => {
         this.link = response.data.data;
-        this.selectedCategory = this.link.attributes.category.data?.id;
+        this.selectedCategory = this.link.attributes.category?.data?.id;
       })
       .catch((error) => {
         console.log(error);

@@ -25,16 +25,16 @@ const routes = [
     component: LinkCreate,
   },
   {
+    path: "/link/:id",
+    name: "LinkDetails",
+    props: true,
+    component: LinkDetails,
+  },
+  {
     path: "/link/:id/edit",
     name: "LinkEdit",
     props: true,
     component: LinkEdit,
-  },
-  {
-    path: "/link/:id/details",
-    name: "LinkDetails",
-    props: true,
-    component: LinkDetails,
   },
   {
     path: "/link/impressum",
