@@ -167,12 +167,59 @@ body {
   text-decoration: none;
 }
 
+.cardIcon {
+  font-size: 5rem;
+}
+
 /* link list  */
 
 .linkList {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.filterIcon {
+  font-size: 3rem;
+  margin-right: 2rem;
+}
+
+.filterButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.categoryEditContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filterTitle {
+  font-size: 1.6rem;
+  margin: 6rem 0 4rem 0;
+}
+
+.categoryFilter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 4rem;
+}
+
+.filterButton {
+  width: 20rem;
 }
 
 /* detail card */
@@ -258,6 +305,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 .buttonCreate:hover {
   background: #AA2184;
   color: white;

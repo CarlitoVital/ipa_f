@@ -5,7 +5,11 @@
     <div class="cardContent">
       <div class="cardTitleContainer">
         <h2 class="cardTitle">Beschreibung</h2>
-        <img src="" alt="" class="cardIcon" />
+        <img
+          :src="link.attributes.image"
+          :alt="link.attributes.title"
+          class="cardIcon"
+        />
       </div>
       <div class="cardButtonsContainer">
         <p class="cardClicks">

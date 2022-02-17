@@ -1,10 +1,16 @@
 <template>
   <div class="cardContainer">
-    <img src="" alt="" class="cardImage" />
+    <img
+      :src="link.attributes.image"
+      :alt="link.attributes.title"
+      class="cardImage"
+    />
     <div class="cardContent">
       <div class="cardTitleContainer">
         <h2 class="cardTitle">Titel</h2>
-        <i :class="link.attributes.category.data?.attributes?.icon"></i>
+        <i
+          :class="`${link.attributes.category_id.data?.attributes?.icon} cardIcon`"
+        ></i>
       </div>
       <div class="cardButtonsContainer">
         <p class="cardClicks">
