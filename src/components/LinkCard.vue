@@ -22,7 +22,11 @@
           :to="{ name: 'LinkDetails', params: { id: link.id } }"
           >Details</router-link
         >
-        <a :href="link.attributes.url" class="buttonSize buttonPink buttonSite">
+        <a
+          @click="addClick"
+          :href="link.attributes.url"
+          class="buttonSize buttonPink buttonSite"
+        >
           zur Seite
         </a>
       </div>
@@ -36,5 +40,25 @@ export default {
   props: {
     link: Object,
   },
+  // data() {
+  //   return {
+  //     link: null,
+  //   };
+  // },
+  // methods: {
+  //   addClick() {
+  //     this.link.attributes.clicks = this.link.attributes.clicks++;
+  //   },
+  // },
+  // created() {
+  //   LinkService.getLink(link.id)
+  //     .then((response) => {
+  //       console.log(response);
+  //       this.link = response.data.data;
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // },
 };
 </script>

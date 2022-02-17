@@ -108,7 +108,7 @@ export default {
     LinkService.getLink(this.id)
       .then((response) => {
         this.link = response.data.data;
-        this.selectedCategory = this.link.attributes.category?.data?.id;
+        this.selectedCategory = this.link.attributes.category_id?.data?.id;
       })
       .catch((error) => {
         console.log(error);

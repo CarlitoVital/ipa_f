@@ -1,6 +1,6 @@
 <template>
   <div class="filterContainer">
-    <div class="linkInputContainer">
+    <div class="linkSearchContainer">
       <label class="linkInputLabel" for="link">Suche</label>
       <input
         class="linkInput"
@@ -12,7 +12,17 @@
     </div>
     <h2 class="filterTitle">Kategorie</h2>
     <div class="categoryFilter">
-      <div class="filteredButton">
+      <select name="category" v-model="selectedCategory">
+        <option
+          :value="category.id"
+          v-for="category in categories"
+          :key="category.id"
+        >
+          {{ category.attributes.name }}
+        </option>
+      </select>
+      <!-- try to filter links with inputs -->
+      <!-- <div class="filteredButton">
         <input
           type="radio"
           id="allCategories"
@@ -39,7 +49,7 @@
           :name="category.attributes.name"
           >{{ category.attributes.name }}</label
         >
-      </div>
+      </div> -->
     </div>
     <button @click="filterDropdown">Filter</button>
   </div>
@@ -86,7 +96,7 @@ export default {
       }
 
       var filteredLinksbyCategory = links.filter((link) => {
-        return link.attributes.category.data?.id === this.selectedCategory;
+        return link.attributes.category_id?.data?.id === this.selectedCategory;
       });
 
       return filteredLinksbyCategory;

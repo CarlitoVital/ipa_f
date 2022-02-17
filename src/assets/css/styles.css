@@ -119,6 +119,12 @@ body {
 }
 
 /* link card */
+.linkSearchContainer {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+}
+
 .cardContainer {
   margin-bottom: 5rem;
   width: 100%;
