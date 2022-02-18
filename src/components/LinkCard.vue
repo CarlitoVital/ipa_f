@@ -22,13 +22,12 @@
           :to="{ name: 'LinkDetails', params: { id: link.id } }"
           >Details</router-link
         >
-        <a
-          @click="addClick"
-          :href="link.attributes.url"
-          class="buttonSize buttonPink buttonSite"
-        >
+        <a :href="link.attributes.url" class="buttonSize buttonPink buttonSite">
           zur Seite
         </a>
+        <!-- <button @click="addClick" class="buttonSize buttonPink buttonSite">
+          Click
+        </button> -->
       </div>
     </div>
   </div>

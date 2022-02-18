@@ -1,28 +1,31 @@
 <template>
   <div class="filterContainer">
-    <div class="linkSearchContainer">
-      <label class="linkInputLabel" for="link">Suche</label>
-      <input
-        class="linkInput"
-        id="search"
-        type="text"
-        v-model="search"
-        placeholder="Suche nach Links"
-      />
-    </div>
-    <h2 class="filterTitle">Kategorie</h2>
-    <div class="categoryFilter">
-      <select name="category" v-model="selectedCategory">
-        <option
-          :value="category.id"
-          v-for="category in categories"
-          :key="category.id"
-        >
-          {{ category.attributes.name }}
-        </option>
-      </select>
-      <!-- try to filter links with inputs -->
-      <!-- <div class="filteredButton">
+    <div class="filterDropdown">
+      <!-- v-if="dropdownStatus === 1" -->
+      <div class="linkSearchContainer">
+        <label class="linkInputLabel" for="link">Suche</label>
+        <input
+          class="linkInput"
+          id="search"
+          type="text"
+          v-model="search"
+          placeholder="Suche nach Links"
+        />
+      </div>
+      <h2 class="filterTitle">Kategorie</h2>
+      <div class="categoryFilter">
+        <select name="category" v-model="selectedCategory">
+          <option value="-1">ALL</option>
+          <option
+            :value="category.id"
+            v-for="category in categories"
+            :key="category.id"
+          >
+            {{ category.attributes.name }}
+          </option>
+        </select>
+        <!-- try to filter links with inputs -->
+        <!-- <div class="filteredButton">
         <input
           type="radio"
           id="allCategories"
@@ -50,9 +53,13 @@
           >{{ category.attributes.name }}</label
         >
       </div> -->
+      </div>
     </div>
-    <button @click="filterDropdown">Filter</button>
+
+    <button class="filterTitle" @click="dropdownClick">Filter</button>
+    <!-- <FilterDropdown /> -->
   </div>
+
   <h1>Linkpinnwand</h1>
   <div class="linkList" v-if="links">
     <LinkCard v-for="link in filteredLinks" :key="link.id" :link="link" />
@@ -65,11 +72,13 @@ import LinkService from "@/services/LinkService.js";
 import CategoryService from "@/services/CategoryService.js";
 // import of card component
 import LinkCard from "@/components/LinkCard.vue";
+// import FilterDropdown from "@/components/FilterDropdown.vue";
 
 export default {
   name: "LinkList",
   components: {
     LinkCard,
+    // FilterDropdown,
   },
   data() {
     return {
@@ -78,6 +87,7 @@ export default {
       selectedCategory: -1,
       searchQuery: null,
       search: "",
+      dropdownStatus: 0,
     };
   },
   computed: {
@@ -112,7 +122,16 @@ export default {
 
       return filteredLinksbyTitle;
     },
+    // dropdownClick() {
+    //   if (this.dropdownStatus === 0) {
+    //     this.dropdownStatus === 1;
+    //   } else {
+    //     this.dropdownStatus === 0;
+    //   }
+    //   console.log(this.dropdownStatus);
+    // },
   },
+
   // functions get API (get data from strapi)
   created() {
     LinkService.getLinks()
