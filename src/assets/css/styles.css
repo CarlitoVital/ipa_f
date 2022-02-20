@@ -139,6 +139,9 @@ body {
     "label input";
   background: radial-gradient(#F2F2F2, #E9E9E9);
 }
+.cardContainer:hover {
+  transform: scale(1.01);
+}
 .cardContainer:last-of-type {
   margin-bottom: 0;
 }
@@ -254,6 +257,9 @@ body {
     "label input";
   background: radial-gradient(#F2F2F2, #E9E9E9);
 }
+.detailContainer:hover {
+  transform: scale(1.01);
+}
 
 .cardDescription {
   font-size: 1.6rem;
@@ -351,6 +357,28 @@ body {
   align-items: center;
   row-gap: 3rem;
 }
+
+/* delete */
+
+.deleteContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.deleteButtonBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deleteButtonBox:last-of-type{
+  margin-top: 5rem;
+}
+
+.deleteButtonBox button {
+  align-items: center;
+}
+
 
 /* footer */
 footer {

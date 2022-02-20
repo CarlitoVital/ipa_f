@@ -18,14 +18,14 @@
           clicks:<br />
           122
         </p>
-        <!-- <router-link
+        <router-link
           class="buttonSize buttonGrey buttonDetails"
           :to="{ name: 'LinkDelete', params: { id: link.id } }"
           >Löschen</router-link
-        > -->
+        >
         <router-link
           class="buttonSize buttonGrey buttonDetails"
-          :to="{ name: 'LinkEdit', params: { id: link.id } / edit }"
+          :to="{ name: 'LinkEdit', params: { id: link.id } }"
           >Editieren</router-link
         >
         <a :href="link.attributes.url" class="buttonSize buttonPink buttonSite">
@@ -58,6 +58,5 @@ export default {
         console.log(error);
       });
   },
-  // mounted: {},
 };
 </script>

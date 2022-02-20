@@ -122,6 +122,10 @@ export default {
 
       return filteredLinksbyTitle;
     },
+    // sortLinks(links) {
+    //   return links.orderBy(this.clicks);
+    // },
+
     // dropdownClick() {
     //   if (this.dropdownStatus === 0) {
     //     this.dropdownStatus === 1;
@@ -130,25 +134,44 @@ export default {
     //   }
     //   console.log(this.dropdownStatus);
     // },
-  },
 
-  // functions get API (get data from strapi)
-  created() {
-    LinkService.getLinks()
-      .then((response) => {
-        console.log(response);
-        this.links = response.data.data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    CategoryService.getCategories()
-      .then((response) => {
-        this.categories = response.data.data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // updateLink() {
+    //   const link = {
+    //     clicks: this.link.attributes.clicks,
+    //   };
+    //   LinkService.putLink(link)
+    //     .then((response) => {
+    //       console.log(response);
+    //       this.$router.push("/");
+    //     })
+    //     .catch((error) => {
+    //       this.error = error;
+    //     });
+    // },
+
+    // functions get API (get data from strapi)
+    created() {
+      LinkService.getLinks()
+        .then((response) => {
+          console.log(response);
+          this.links = response.data.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      CategoryService.getCategories()
+        .then((response) => {
+          this.categories = response.data.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
+  // mounted: {
+  //   addOneClick() {
+  //     this.link.attributes.clicks = this.link.attributes.clicks++;
+  //   },
+  // },
 };
 </script>

@@ -4,6 +4,7 @@ import LinkList from "../views/LinkList.vue";
 import Info from "../views/Info.vue";
 import LinkCreate from "../views/LinkCreate.vue";
 import LinkEdit from "../views/LinkEdit.vue";
+import LinkDelete from "../views/LinkDelete.vue";
 import LinkDetails from "../views/LinkDetails.vue";
 import Impressum from "../views/Impressum.vue";
 
@@ -35,6 +36,12 @@ const routes = [
     name: "LinkEdit",
     props: true,
     component: LinkEdit,
+  },
+  {
+    path: "/link/:id/delete",
+    name: "LinkDelete",
+    props: true,
+    component: LinkDelete,
   },
   {
     path: "/link/impressum",
