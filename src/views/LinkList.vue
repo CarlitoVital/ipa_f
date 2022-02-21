@@ -69,7 +69,7 @@
     <!-- <FilterDropdown /> -->
   </div>
 
-  <h1>Linkpinnwand 123</h1>
+  <h1>Linkpinnwand</h1>
   <div class="linkList" v-if="links">
     <LinkCard v-for="link in filteredLinks" :key="link.id" :link="link" />
   </div>
@@ -112,6 +112,11 @@ export default {
       return links;
     },
 
+    rankLinks: function () {
+      let links = this.rankedLinksByClicks(this.links);
+      return links;
+    },
+
     // rankLinks: function () {
     //   this.links | sortBy("created");
     //   return links;
@@ -143,7 +148,18 @@ export default {
       return filteredLinksbyTitle;
     },
 
-    rankedLinksByClicks(links) {},
+    // rankedLinksByClicks(links) {
+
+    //   link.sort((a, b) => b - a);
+    //   return links;
+    // },
+
+    // rankedLinksByClicks(links) {
+    //   links.sort((link) =>
+    //     link.attributes.clicks > link.attributes.clicks ? 1 : -1
+    //   );
+    //   return links;
+    // },
 
     // IDEA 1
     // sortByClicks(links) {

@@ -15,7 +15,7 @@ const apiClient = axios.create({
 export default {
   getLinks() {
     // every return is added onto baseURL
-    return apiClient.get("/links?populate=*");
+    return apiClient.get("/links?populate=*&sort[0]=clicks%3Adesc");
   },
   getLink(id) {
     return apiClient.get(`/links/${id}?populate=*`);
