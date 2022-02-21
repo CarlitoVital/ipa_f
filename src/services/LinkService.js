@@ -27,6 +27,10 @@ export default {
     console.log("putLink: ", link);
     return apiClient.put(`/links/${link.id}`, { data: link });
   },
+  // putLink(id, link) {
+  //   console.log("putLink: ", link);
+  //   return apiClient.put(`/links/${id}`, { id, data: link });
+  // },
   deleteLink(id) {
     return apiClient.delete(`/links/${id}`);
   },

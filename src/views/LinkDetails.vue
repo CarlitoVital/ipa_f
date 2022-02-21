@@ -1,6 +1,6 @@
 <template>
   <h1>Link Titel</h1>
-  <div class="detailContainer">
+  <div v-if="link" class="detailContainer">
     <img
       :src="link.attributes.image"
       :alt="link.attributes.title"
@@ -16,7 +16,7 @@
       <div class="cardButtonsContainer">
         <p class="cardClicks">
           clicks:<br />
-          122
+          {{ link.attributes.clicks }}
         </p>
         <router-link
           class="buttonSize buttonGrey buttonDetails"
@@ -51,7 +51,7 @@ export default {
     // function to use the get API (get data from strapi)
     LinkService.getLink(this.id)
       .then((response) => {
-        console.log("link:", response.data.data);
+        // console.log("link:", response.data.data);
         this.link = response.data.data;
       })
       .catch((error) => {

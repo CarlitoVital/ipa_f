@@ -54,13 +54,22 @@
         >
       </div> -->
       </div>
+
+      <!-- <h2 class="orderByClicksTitle">Sortiere nach Klicks</h2>
+      <button
+        type="button"
+        @click="rankLinks"
+        class="buttonSize buttonPink buttonDetails"
+      >
+        Ranking
+      </button> -->
     </div>
 
-    <button class="filterTitle" @click="dropdownClick">Filter</button>
+    <button class="filterTitle">Filter</button>
     <!-- <FilterDropdown /> -->
   </div>
 
-  <h1>Linkpinnwand</h1>
+  <h1>Linkpinnwand 123</h1>
   <div class="linkList" v-if="links">
     <LinkCard v-for="link in filteredLinks" :key="link.id" :link="link" />
   </div>
@@ -91,14 +100,25 @@ export default {
     };
   },
   computed: {
+    // filteredLinks: function () {
+    //   let links = this.rankedLinksByClicks(this.links);
+    //   links = this.filteredLinksByCategory(links);
+    //   links = this.filteredLinksByTitle(links);
+    //   return links;
+    // },
     filteredLinks: function () {
-      let links = this.filteredLinksbyCategory(this.links);
-      links = this.filteredLinksbyTitle(links);
+      let links = this.filteredLinksByCategory(this.links);
+      links = this.filteredLinksByTitle(links);
       return links;
     },
+
+    // rankLinks: function () {
+    //   this.links | sortBy("created");
+    //   return links;
+    // },
   },
   methods: {
-    filteredLinksbyCategory(links) {
+    filteredLinksByCategory(links) {
       console.log(this.selectedCategory);
 
       if (this.selectedCategory == -1) {
@@ -111,7 +131,7 @@ export default {
 
       return filteredLinksbyCategory;
     },
-    filteredLinksbyTitle(links) {
+    filteredLinksByTitle(links) {
       console.log(this.search);
 
       var filteredLinksbyTitle = links.filter((link) => {
@@ -122,6 +142,43 @@ export default {
 
       return filteredLinksbyTitle;
     },
+
+    rankedLinksByClicks(links) {},
+
+    // IDEA 1
+    // sortByClicks(links) {
+    //   links.sort((a, b) => (a[clicks] < b[clicks] ? -1 : 1));
+    //   return links;
+    // },
+
+    // IDEA 2
+    // sortFunc: function () {
+    //   return this.links.slice().sort(function (a, b) {
+    //     return a.clicks > b.clicks ? 1 : -1;
+    //   });
+    // },
+
+    // IDEA 3
+    // rankedLinksByClicks: function () {
+    //   function compare(a, b) {
+    //     if (a.name < b.name) return -1;
+    //     if (a.name > b.name) return 1;
+    //     return 0;
+    //   }
+
+    //   return this.arrays.sort(compare);
+    // },
+
+    // IDEA 4
+    // rankedLinksByClicks(links) {
+    //   var clicks = this.links.link.attributes.clicks;
+    //   var rankedLinksByClicks = links.ranker((links) => {
+    //     return links.orderBy(clicks);
+    //   });
+
+    //   return rankedLinksByClicks;
+    // },
+
     // sortLinks(links) {
     //   return links.orderBy(this.clicks);
     // },
@@ -150,23 +207,24 @@ export default {
     // },
 
     // functions get API (get data from strapi)
-    created() {
-      LinkService.getLinks()
-        .then((response) => {
-          console.log(response);
-          this.links = response.data.data;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-      CategoryService.getCategories()
-        .then((response) => {
-          this.categories = response.data.data;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
+  },
+  created() {
+    console.log("Hello");
+    LinkService.getLinks()
+      .then((response) => {
+        console.log(response);
+        this.links = response.data.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    CategoryService.getCategories()
+      .then((response) => {
+        this.categories = response.data.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
   // mounted: {
   //   addOneClick() {

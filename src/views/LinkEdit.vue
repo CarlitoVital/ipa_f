@@ -2,7 +2,7 @@
   <template>
     <h1>Link Erstellen</h1>
 
-    <form class="linkForm" v-if="link" @submit.prevent="updateLink">
+    <form class="linkForm" @submit.prevent="updateLink">
       <div class="linkInputContainer">
         <label class="linkInputLabel" for="link">URL</label>
         <input
@@ -108,6 +108,7 @@ export default {
     this.getCategories();
     LinkService.getLink(this.id)
       .then((response) => {
+        console.log(response);
         this.link = response.data.data;
         this.selectedCategory = this.link.attributes.category_id?.data?.id;
       })

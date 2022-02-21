@@ -1,5 +1,5 @@
 <template>
-  <div class="cardContainer">
+  <div v-if="link" class="cardContainer">
     <img
       :src="link.attributes.image"
       :alt="link.attributes.title"
@@ -18,11 +18,16 @@
           {{ link.attributes.clicks }}
         </p>
         <router-link
+          @click="addClick"
           class="buttonSize buttonGrey buttonDetails"
           :to="{ name: 'LinkDetails', params: { id: link.id } }"
           >Details</router-link
         >
-        <a :href="link.attributes.url" class="buttonSize buttonPink buttonSite">
+        <a
+          @click="addClick"
+          :href="link.attributes.url"
+          class="buttonSize buttonPink buttonSite"
+        >
           zur Seite
         </a>
         <!-- <button @click="addClick" class="buttonSize buttonPink buttonSite">
@@ -34,6 +39,7 @@
 </template>
 
 <script>
+import LinkService from "../services/LinkService";
 export default {
   name: "LinkCard",
   props: {
@@ -44,20 +50,36 @@ export default {
   //     link: null,
   //   };
   // },
-  // methods: {
-  //   addClick() {
-  //     this.link.attributes.clicks = this.link.attributes.clicks++;
-  //   },
-  // },
-  // created() {
-  //   LinkService.getLink(link.id)
-  //     .then((response) => {
-  //       console.log(response);
-  //       this.link = response.data.data;
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // },
+  methods: {
+    addClick() {
+      // this.link.attributes.clicks = this.link.attributes.clicks++;
+      // const klickTest = 3;
+      const link = {
+        id: this.link.id,
+        // ...this.link.attributes,
+        clicks: this.link.attributes.clicks,
+      };
+      link.clicks++;
+      console.log(link);
+      LinkService.putLink(link)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  addClick() {
+    LinkService;
+    // LinkService.getLink(link.id)
+    //   .then((response) => {
+    //     console.log(response);
+    //     this.link = response.data.data;
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+  },
 };
 </script>
