@@ -53,6 +53,7 @@ export default {
       .then((response) => {
         // console.log("link:", response.data.data);
         this.link = response.data.data;
+        console.log("Link Service Details", this.link);
       })
       .catch((error) => {
         console.log(error);
