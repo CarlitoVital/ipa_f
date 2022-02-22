@@ -2,7 +2,7 @@
   <template>
     <h1>Link Erstellen</h1>
 
-    <form class="linkForm" @submit.prevent="updateLink">
+    <form v-if="link" class="linkForm" @submit.prevent="updateLink">
       <div class="linkInputContainer">
         <label class="linkInputLabel" for="link">URL</label>
         <input
@@ -46,6 +46,21 @@
           v-model="link.attributes.image"
         />
       </div>
+      <select
+        id="category"
+        class="form-select"
+        name="category"
+        v-model="selectedCategory"
+      >
+        <option
+          :value="category.id"
+          v-for="category in categories"
+          :key="category.id"
+        >
+          {{ category.attributes.name }}
+        </option>
+        <!-- done! -->
+      </select>
       <button class="buttonSize buttonCreate" type="submit">Erstellen +</button>
     </form>
   </template>
@@ -66,51 +81,58 @@ export default {
       selectedCategory: null,
     };
   },
-  methods: {
-    updateLink() {
-      const link = {
-        id: this.link.id,
-        url: this.link.attributes.url,
-        title: this.link.attributes.title,
-        description: this.link.attributes.description,
-        image: this.link.attributes.image,
-        category: this.selectedCategory,
-      };
-      LinkService.putLink(link)
-        .then((response) => {
-          console.log(response);
-          this.$router.push("/");
-        })
-        .catch((error) => {
-          this.error = error;
-        });
-    },
-    // get meta data from strapi api to the site that has been choosen
-    getMetaDataFromUrl() {
-      LinkService.postUrlForMetaData(this.link.attributes.url).then(
-        (response) => {
-          console.log(response);
-          const metaData = response.data.data;
-          console.log(metaData);
-          this.link.attributes.title = metaData.title;
-          this.link.attributes.description = metaData.description;
-          this.link.attributes.image = metaData.image;
-        }
-      );
-    },
-    getCategories() {
-      CategoryService.getCategories().then((response) => {
-        this.categories = response.data.data;
-      });
-    },
-  },
+  // methods: {
+  //   updateLink() {
+  //     const link = {
+  //       id: this.link.id,
+  //       url: this.link.attributes.url,
+  //       title: this.link.attributes.title,
+  //       description: this.link.attributes.description,
+  //       image: this.link.attributes.image,
+  //       category: this.selectedCategory,
+  //     };
+  //     LinkService.putLink(link)
+  //       .then((response) => {
+  //         console.log(response);
+  //         this.$router.push("/");
+  //       })
+  //       .catch((error) => {
+  //         this.error = error;
+  //       });
+  //   },
+  // get meta data from strapi api to the site that has been choosen
+  // getMetaDataFromUrl() {
+  //   LinkService.postUrlForMetaData(this.link.attributes.url).then(
+  //     (response) => {
+  //       console.log(response);
+  //       const metaData = response.data.data;
+  //       console.log(metaData);
+  //       this.link.attributes.title = metaData.title;
+  //       this.link.attributes.description = metaData.description;
+  //       this.link.attributes.image = metaData.image;
+  //     }
+  //   );
+  // },
+  // getCategories() {
+  //   CategoryService.getCategories().then((response) => {
+  //     this.categories = response.data.data;
+  //   });
+  // },
+  // },
   created() {
-    this.getCategories();
+    // this.getCategories();
+    CategoryService.getCategories()
+      .then((response) => {
+        this.categories = response.data.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     LinkService.getLink(this.id)
       .then((response) => {
         console.log(response);
         this.link = response.data.data;
-        this.selectedCategory = this.link.attributes.category_id?.data?.id;
+        this.selectedCategory = this.link.attributes.category_id.data?.id;
       })
       .catch((error) => {
         console.log(error);
