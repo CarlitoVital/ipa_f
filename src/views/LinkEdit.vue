@@ -111,14 +111,9 @@ export default {
         }
       );
     },
-    // getCategories() {
-    //   CategoryService.getCategories().then((response) => {
-    //     this.categories = response.data.data;
-    //   });
-    // },
   },
   created() {
-    // this.getCategories();
+    // functions get API (get data from strapi)
     CategoryService.getCategories()
       .then((response) => {
         this.categories = response.data.data;
@@ -126,13 +121,12 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+    // functions get API (get data from strapi)
     LinkService.getLink(this.id)
       .then((response) => {
-        console.log("response", response);
+        // console.log("response", response);
         this.link = response.data.data;
         this.selectedCategory = this.link.attributes.category.data?.id;
-        console.log("Link Service Edit", this.link);
-        console.log("Link Service Edit2", this.selectedCategory);
       })
       .catch((error) => {
         console.log(error);

@@ -70,6 +70,7 @@
   </div>
 
   <h1>Linkpinnwand</h1>
+  <p class="startText"></p>
   <div class="linkList" v-if="links">
     <LinkCard v-for="link in filteredLinks" :key="link.id" :link="link" />
   </div>
@@ -242,10 +243,5 @@ export default {
         console.log(error);
       });
   },
-  // mounted: {
-  //   addOneClick() {
-  //     this.link.attributes.clicks = this.link.attributes.clicks++;
-  //   },
-  // },
 };
 </script>
