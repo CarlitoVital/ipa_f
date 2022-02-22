@@ -130,7 +130,7 @@ export default {
       .then((response) => {
         console.log("response", response);
         this.link = response.data.data;
-        this.selectedCategory = this.link.attributes.category_id?.data?.id;
+        this.selectedCategory = this.link.attributes.category.data?.id;
         console.log("Link Service Edit", this.link);
         console.log("Link Service Edit2", this.selectedCategory);
       })
