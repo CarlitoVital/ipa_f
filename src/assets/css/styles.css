@@ -1,3 +1,25 @@
+/* @font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/cera_pro_bold.eot'), url('../fonts/cera_pro_bold.ttf'), url('../fonts/cera_pro_bold.woff'), url('../fonts/cera_pro_bold.woff2'), url('../fonts/cera_pro_light.eot'), url('../fonts/cera_pro_light.ttf'), url('../fonts/cera_pro_light.woff'), url('../fonts/cera_pro_light.woff2') 
+} */
+
+@font-face{
+	font-family: 'CeraPRO';
+	src: url('/assets/fonts/34BEC4_0_0.eot');
+	src: url('/assets/fonts/34BEC4_0_0.eot?#iefix') format('embedded-opentype'),
+		 url('/assets/fonts/34BEC4_0_0.woff2') format('woff2'),
+		 url('/assets/fonts/34BEC4_0_0.woff') format('woff'),
+		 url('/assets/fonts/34BEC4_0_0.ttf') format('truetype');
+    font-weight: 700;     
+}
+
+@font-face {
+    font-family: 'CeraPRO';
+    src: url('/assets/fonts/CeraPro-Regular.eot');
+    src: url('/assets/fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),url('/assets/fonts/CeraPro-Regular.woff2') format('woff2'),url('/assets/fonts/CeraPro-Regular.woff') format('woff'),url('/assets/fonts/CeraPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
 /* default */
 * {
   box-sizing: border-box;
@@ -36,11 +58,6 @@ button, input[type="submit"], input[type="reset"] {
 a, a:hover, a:focus, a:active {
   text-decoration: none;
   color: inherit;
-}
-
-@font-face {
-  font-family: 'Cera Pro';
-  src: url('../fonts/cera_pro_bold.eot'), url('../fonts/cera_pro_bold.ttf'), url('../fonts/cera_pro_bold.woff'), url('../fonts/cera_pro_bold.woff2'), url('../fonts/cera_pro_light.eot'), url('../fonts/cera_pro_light.ttf'), url('../fonts/cera_pro_light.woff'), url('../fonts/cera_pro_light.woff2') 
 }
 
 body {
@@ -95,6 +112,54 @@ body {
   color: black;
   text-decoration: none;
 }
+/* mobil nav */
+.mobilNavContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mobilNavBurgerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background:#F3EFA0;
+  height: 10rem;
+  width: 100%;
+  padding: 3rem;
+}
+.mobilLogoAdveryContainer {
+  height: 2rem;
+}
+.mobilIconLeuchtturmContainer {
+  height: 3rem;
+}
+.burger {
+  height: 2rem;
+  width: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.burger span {
+  height: 0.3rem;
+  background: black;
+  width: 100%;
+}
+.mobilNavLinkContainer {
+  background: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+}
+.mobilNavMainLinks {
+  height: 4rem;
+  font-size: 20px;
+}
+
 /* start text */
 .startTextTitle {
   font-size: 2rem;
@@ -577,7 +642,16 @@ footer {
     font-weight: 600;
 }
 }
+@media only screen and (min-width: 600px) {
+  .mobilNavContainer {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 600px) {
+  .navContainer {
+    display: none;
+  }
   .cardTitle {
     font-size: 1.8rem;
   }

@@ -1,31 +1,32 @@
 <template>
   <div class="filterContainer">
-    <div class="filterDropdown">
-      <!-- v-if="dropdownStatus === 1" -->
-      <div class="linkSearchContainer">
-        <label class="linkInputLabel" for="link">Suche</label>
-        <input
-          class="linkInput"
-          id="search"
-          type="text"
-          v-model="search"
-          placeholder="Suche nach Links"
-        />
-      </div>
-      <h2 class="filterTitle">Kategorie</h2>
-      <div class="categoryFilter">
-        <select name="category" v-model="selectedCategory">
-          <option value="-1">ALL</option>
-          <option
-            :value="category.id"
-            v-for="category in categories"
-            :key="category.id"
-          >
-            {{ category.attributes.name }}
-          </option>
-        </select>
-        <!-- try to filter links with inputs -->
-        <!-- <div class="filteredButton">
+    <Transition name="bounce">
+      <div class="filterDropdown" v-show="toggle">
+        <!-- v-if="dropdownStatus === 1" -->
+        <div class="linkSearchContainer">
+          <label class="linkInputLabel" for="link">Suche</label>
+          <input
+            class="linkInput"
+            id="search"
+            type="text"
+            v-model="search"
+            placeholder="Suche nach Links"
+          />
+        </div>
+        <h2 class="filterTitle">Kategorie</h2>
+        <div class="categoryFilter">
+          <select name="category" v-model="selectedCategory">
+            <option value="-1">ALL</option>
+            <option
+              :value="category.id"
+              v-for="category in categories"
+              :key="category.id"
+            >
+              {{ category.attributes.name }}
+            </option>
+          </select>
+          <!-- try to filter links with inputs -->
+          <!-- <div class="filteredButton">
         <input
           type="radio"
           id="allCategories"
@@ -53,9 +54,9 @@
           >{{ category.attributes.name }}</label
         >
       </div> -->
-      </div>
+        </div>
 
-      <!-- <h2 class="orderByClicksTitle">Sortiere nach Klicks</h2>
+        <!-- <h2 class="orderByClicksTitle">Sortiere nach Klicks</h2>
       <button
         type="button"
         @click="rankLinks"
@@ -63,9 +64,15 @@
       >
         Ranking
       </button> -->
-    </div>
+      </div>
+    </Transition>
 
-    <button class="filterTitle">Filter</button>
+    <!-- <Burger
+      @toggle-menu="menuActive = !menuActive"
+      :active="menuActive"
+    ></Burger> -->
+
+    <button class="filterTitle" @click="toggle = !toggle">Filter</button>
     <!-- <FilterDropdown /> -->
   </div>
 
@@ -82,13 +89,13 @@ import LinkService from "@/services/LinkService.js";
 import CategoryService from "@/services/CategoryService.js";
 // import of card component
 import LinkCard from "@/components/LinkCard.vue";
-// import FilterDropdown from "@/components/FilterDropdown.vue";
+// import Burger from "@/components/Burger.vue";
 
 export default {
   name: "LinkList",
   components: {
     LinkCard,
-    // FilterDropdown,
+    // Burger,
   },
   data() {
     return {
@@ -98,6 +105,7 @@ export default {
       searchQuery: null,
       search: "",
       dropdownStatus: 0,
+      toggle: false,
     };
   },
   computed: {
@@ -245,3 +253,32 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+/* .v-enter-active,
+.v-leave-active {
+  transition: opacity 1s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+} */
+.bounce-enter-active {
+  animation: bounce-in 0.75s;
+}
+.bounce-leave-active {
+  animation: bounce-in 1s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style>
