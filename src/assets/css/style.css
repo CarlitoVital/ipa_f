@@ -1,0 +1,935 @@
+/* @font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/cera_pro_bold.eot'), url('../fonts/cera_pro_bold.ttf'), url('../fonts/cera_pro_bold.woff'), url('../fonts/cera_pro_bold.woff2'), url('../fonts/cera_pro_light.eot'), url('../fonts/cera_pro_light.ttf'), url('../fonts/cera_pro_light.woff'), url('../fonts/cera_pro_light.woff2') 
+} */
+@font-face {
+  font-family: 'CeraPRO';
+  src: url("/assets/fonts/34BEC4_0_0.eot");
+  src: url("/assets/fonts/34BEC4_0_0.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/34BEC4_0_0.woff2") format("woff2"), url("/assets/fonts/34BEC4_0_0.woff") format("woff"), url("/assets/fonts/34BEC4_0_0.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'CeraPRO';
+  src: url("/assets/fonts/CeraPro-Regular.eot");
+  src: url("/assets/fonts/CeraPro-Regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/CeraPro-Regular.woff2") format("woff2"), url("/assets/fonts/CeraPro-Regular.woff") format("woff"), url("/assets/fonts/CeraPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+/* default */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+/* app styles that are global */
+main {
+  margin: 0 auto;
+  width: 120rem;
+}
+
+h1 {
+  margin: 8rem 0;
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* reset default stylings */
+button, input[type="submit"], input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Cera Pro", sans-serif;
+}
+
+/* navigation */
+.navContainer {
+  background-color: #F3EFA0;
+  width: 100%;
+  height: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar {
+  width: 120rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navMainLinks {
+  padding: 6px 0;
+}
+
+.navMainLinks:hover {
+  border-bottom: 2px solid black;
+  padding-bottom: 4px;
+}
+
+.logoAdveryContainer {
+  height: 3rem;
+  width: auto;
+}
+
+.logoAdvery {
+  width: 100%;
+  height: 100%;
+}
+
+.iconLeuchtturmContainer {
+  height: 7rem;
+  width: 7rem;
+}
+
+.iconLeuchtturm {
+  height: 100%;
+  width: 100%;
+}
+
+.navMainLinks {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+/* mobil nav */
+.mobilNavContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mobilNavBurgerContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #F3EFA0;
+  height: 10rem;
+  width: 100%;
+  padding: 3rem;
+}
+
+.mobilLogoAdveryContainer {
+  height: 2rem;
+}
+
+.mobilIconLeuchtturmContainer {
+  height: 3rem;
+}
+
+.burger {
+  height: 2rem;
+  width: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.burger span {
+  height: 0.3rem;
+  background: black;
+  width: 100%;
+}
+
+.mobilNavLinkContainer {
+  background: white;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 5rem;
+}
+
+.mobilNavMainLinks {
+  height: 4rem;
+  font-size: 20px;
+}
+
+/* start text */
+.startTextTitle {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.startText {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.startText:last-of-type {
+  margin-bottom: 0;
+}
+
+/* buttons */
+.buttonSize {
+  width: 20rem;
+  height: 5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.buttonGrey {
+  background: white;
+  border: 1px solid black;
+  color: black;
+}
+
+.buttonPink {
+  background: white;
+  border: 1px solid #AA2184;
+  color: #AA2184;
+}
+
+.buttonGrey:hover {
+  background: black;
+  color: white;
+}
+
+.buttonPink:hover {
+  background: #AA2184;
+  color: white;
+}
+
+/* link card */
+.linkSearchContainer {
+  margin-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.cardContainer {
+  margin-bottom: 5rem;
+  width: 100%;
+  height: 25rem;
+  display: -ms-grid;
+  display: grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 0px 0px;
+      grid-template-areas: "label input";
+  background: radial-gradient(#F2F2F2, #E9E9E9);
+}
+
+.cardContainer:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.cardContainer:last-of-type {
+  margin-bottom: 0;
+}
+
+.cardImage {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  overflow: hidden;
+  background: white;
+}
+
+.cardContent {
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cardTitleContainer {
+  width: 100%;
+  font-size: 2.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cardTitle {
+  font-size: 2.6rem;
+}
+
+.cardButtonsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.cardClicks {
+  font-size: 2rem;
+}
+
+.detailLink {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.cardIcon {
+  font-size: 5rem;
+}
+
+/* link list  */
+.linkList {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.filterIcon {
+  font-size: 3rem;
+  margin-right: 2rem;
+}
+
+.filterButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.categoryEditContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filterContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filterTitle {
+  font-size: 1.6rem;
+  margin: 6rem 0 4rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.categoryFilter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 4rem;
+}
+
+.filterButton {
+  width: 20rem;
+}
+
+/* detail card */
+.detailContainer {
+  width: 100%;
+  min-height: 25rem;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 0px 0px;
+      grid-template-areas: "label input";
+  background: radial-gradient(#F2F2F2, #E9E9E9);
+}
+
+.detailContainer:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.cardDescription {
+  font-size: 1.6rem;
+  font-weight: lighter;
+}
+
+/* create  */
+.linkForm {
+  margin: 0 auto;
+  width: 70rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.linkInputContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 5rem;
+}
+
+.linkInputLabel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 3rem;
+  width: 15rem;
+  height: 5rem;
+  background: black;
+  color: white;
+  font-size: 2rem;
+}
+
+.linkInput {
+  width: 55rem;
+  height: 5rem;
+  padding-left: 3rem;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  border: 1px solid black;
+  color: black;
+}
+
+.inputContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.buttonAutofill {
+  margin-bottom: 5rem;
+  width: 20rem;
+  height: 5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.buttonCreate {
+  margin-top: 5rem;
+  background: white;
+  border: 1px solid #AA2184;
+  color: #AA2184;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.buttonCreate:hover {
+  background: #AA2184;
+  color: white;
+}
+
+.createCategoryContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.createCategoryTitle {
+  font-size: 2rem;
+}
+
+.createSingleCategoryContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 3rem;
+}
+
+/* delete */
+.deleteContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.deleteButtonBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.deleteButtonBox:last-of-type {
+  margin-top: 5rem;
+}
+
+.deleteButtonBox button {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* start text */
+.startTextContainer {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* footer */
+footer {
+  margin-top: 20rem;
+  width: 100%;
+  height: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #F3EFA0;
+}
+
+.footerLink {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  main {
+    width: 100%;
+  }
+  /* nav */
+  .navbar {
+    width: 100%;
+    padding: 0 3rem;
+  }
+  /* linklist */
+  .linkList {
+    padding: 3rem;
+  }
+  .cardContainer {
+    width: 100%;
+    height: 25rem;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-columns: 1fr;
+    -ms-grid-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    gap: 0em 0px;
+        grid-template-areas: "." ".";
+    justify-items: stretch;
+    background: radial-gradient(#F2F2F2, #E9E9E9);
+  }
+  .cardContent {
+    height: 25rem;
+    width: 100%;
+  }
+  .cardImage {
+    height: 25rem;
+    width: 100%;
+  }
+  .cardClicks {
+    font-size: 1.6rem;
+  }
+  .linkInput {
+    width: 100%;
+  }
+  /* form */
+  .linkInputContainer {
+    height: 4rem;
+  }
+  .linkInputLabel {
+    font-size: 1.6rem;
+    height: 4rem;
+  }
+  .linkInput {
+    font-size: 1.6rem;
+    height: 4rem;
+  }
+  .linkInputContainer {
+    margin-bottom: 4rem;
+  }
+  .linkInputContainer:last-of-type {
+    margin-bottom: 0;
+  }
+  /* button */
+  .buttonSize {
+    width: 12rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  .buttonAutofill {
+    width: 12rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 4rem;
+  }
+  /* start text */
+  .startTextContainer {
+    font-size: 1.6rem;
+    padding: 0 3rem;
+  }
+  /* form */
+  .linkForm {
+    padding: 0 3rem;
+    width: 100%;
+  }
+  .linkInputContainer {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-columns: 1fr;
+    -ms-grid-columns: 1fr 4fr;
+        grid-template-columns: 1fr 4fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    gap: 0em 0px;
+        grid-template-areas: ". .";
+    justify-items: stretch;
+  }
+  .linkInputLabel {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .cardContainer {
+    width: 100%;
+    min-height: 50rem;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-columns: 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    gap: 0em 0px;
+        grid-template-areas: "." ".";
+    justify-items: stretch;
+    background: radial-gradient(#F2F2F2, #E9E9E9);
+  }
+  /* card details */
+  .detailContainer {
+    width: 100%;
+    min-height: 50rem;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-columns: 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    gap: 0em 0px;
+        grid-template-areas: "." ".";
+    justify-items: stretch;
+  }
+  /* start text */
+  .startTextTitle {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .startText {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+    font-weight: 400;
+  }
+  /* form */
+  .linkInputContainer {
+    height: 6rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .linkInputLabel {
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    color: black;
+    padding: 0;
+    font-size: 1.2rem;
+    height: 3rem;
+  }
+  .linkInput {
+    font-size: 1.2rem;
+    height: 3rem;
+  }
+  .linkInputContainer {
+    margin-bottom: 3rem;
+  }
+  .linkInputContainer:last-of-type {
+    margin-bottom: 0;
+  }
+  /* button */
+  .buttonSize {
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .buttonAutofill {
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .mobilNavContainer {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navContainer {
+    display: none;
+  }
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+  .cardIcon {
+    font-size: 3rem;
+  }
+  .logoAdveryContainer, .iconLeuchtturmContainer {
+    display: none;
+  }
+}

@@ -4,7 +4,7 @@ import App from "./App.vue";
 import router from "./router";
 
 // import of the css files
-import "./assets/css/styles.css";
+import "./assets/css/style.css";
 import "./assets/font_style.css";
 
 createApp(App).use(router).mount("#app");
