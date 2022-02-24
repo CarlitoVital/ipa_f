@@ -1,5 +1,5 @@
 <template>
-  <h1>Link Titel</h1>
+  <h1>{{ link.attributes.title }}</h1>
   <div v-if="link" class="detailContainer">
     <img
       :src="link.attributes.image"

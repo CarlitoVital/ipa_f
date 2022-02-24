@@ -97,5 +97,11 @@ export default {
       });
     },
   },
+  created() {
+    // with created loading the categories
+    // https://v3.vuejs.org/api/options-lifecycle-hooks.html
+    console.log("LinkCreate.vue created");
+    this.getCategories();
+  },
 };
 </script>

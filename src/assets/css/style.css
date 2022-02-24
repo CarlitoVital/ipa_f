@@ -34,6 +34,31 @@ main {
   width: 120rem;
 }
 
+/* nav */
+/* .navContainer {
+  z-index: 200;
+  height: 100px;
+  width: 100%;
+  background: #f3efa0;
+  position: fixed;
+  transform: translate3d(0, 0, 0);
+  transition: 0.1s all ease-out;
+}
+
+.navContainer.hidden-navbar {
+  box-shadow: none;
+  transform: translate3d(0, -100%, 0);
+} */
+/* .navContainer {
+  position: fixed;
+  z-index: 100;
+} */
+/* 
+.filterContainer {
+  margin-top: 10rem;
+  position: fixed;
+  z-index: 50;
+} */
 h1 {
   margin: 8rem 0;
   font-size: 4rem;
@@ -178,6 +203,12 @@ body {
   height: 3rem;
 }
 
+.burgerContainer {
+  display: block;
+  position: absolute;
+  left: calc(50% - 10px);
+}
+
 .burger {
   height: 2rem;
   width: 3rem;
@@ -230,6 +261,7 @@ body {
 }
 
 .startText {
+  font-weight: 400;
   font-size: 2rem;
   margin-bottom: 2rem;
 }

@@ -38,11 +38,13 @@
       <div class="mobilLogoAdveryContainer">
         <img class="logoAdvery" src="@/assets/logos/logo_advery.svg" />
       </div>
-      <button class="burger" @click="burger = !burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="burgerContainer">
+        <button class="burger" @click="burger = !burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
       <div class="mobilIconLeuchtturmContainer">
         <img class="iconLeuchtturm" src="@/assets/logos/logo_lt.svg" />
       </div>
@@ -63,13 +65,43 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      burger: false,
-    };
-  },
-};
+// const OFFSET = 60;
+
+// export default {
+//   data() {
+//     return {
+//       burger: false,
+//       showNavbar: true,
+//       lastScrollPosition: 0,
+//       scrollValue: 0,
+//     };
+//   },
+//   mounted() {
+//     this.lastScrollPosition = window.pageYOffset;
+//     window.addEventListener("scroll", this.onScroll);
+//     const viewportMeta = document.createElement("meta");
+//     viewportMeta.name = "viewport";
+//     viewportMeta.content = "width=device-width, initial-scale=1";
+//     document.head.appendChild(viewportMeta);
+//   },
+
+//   beforeUnmount() {
+//     window.removeEventListener("scroll", this.onScroll);
+//   },
+
+//   methods: {
+//     onScroll() {
+//       if (window.pageYOffset < 0) {
+//         return;
+//       }
+//       if (Math.abs(window.pageYOffset - this.lastScrollPosition) < OFFSET) {
+//         return;
+//       }
+//       this.showNavbar = window.pageYOffset < this.lastScrollPosition;
+//       this.lastScrollPosition = window.pageYOffset;
+//     },
+//   },
+// };
 </script>
 
 <style>

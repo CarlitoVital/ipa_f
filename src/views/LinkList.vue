@@ -134,20 +134,20 @@ export default {
   methods: {
     filteredLinksByCategory(links) {
       console.log(this.selectedCategory);
-
+      // is the value of selected category -1 (default) return normal list
       if (this.selectedCategory == -1) {
         return this.links;
       }
-
+      // is value of the link ... category = the selected category push it in new list
       var filteredLinksbyCategory = links.filter((link) => {
         return link.attributes.category_id?.data?.id === this.selectedCategory;
       });
 
       return filteredLinksbyCategory;
     },
+    // filter links by title
     filteredLinksByTitle(links) {
-      console.log(this.search);
-
+      // is the value of search var in the title value
       var filteredLinksbyTitle = links.filter((link) => {
         return link.attributes.title
           .toLowerCase()

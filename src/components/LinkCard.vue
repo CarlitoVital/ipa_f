@@ -52,13 +52,12 @@ export default {
   // },
   methods: {
     addClick() {
-      // this.link.attributes.clicks = this.link.attributes.clicks++;
-      // const klickTest = 3;
+      // make new const because the data is from another vue file, data can not be changed
       const link = {
         id: this.link.id,
-        // ...this.link.attributes,
         clicks: this.link.attributes.clicks,
       };
+      // at one to click int
       link.clicks++;
       console.log(link);
       LinkService.putLink(link)
