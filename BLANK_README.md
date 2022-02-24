@@ -30,19 +30,13 @@
     <img src="src/assets/project_logo/ipa_projekt_logo.svg" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">IPA Linkpinnwand-Webseite</h3>
 
   <p align="center">
-    project_description
+    Projekt Beschreibung
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    Die Webseite soll für die Sammlung nützlicher und interessanter Links sein. (Z.B. Tutorials, Infos, Best Practices usw.)
+    Für jeden Link der eingeben wird der Titel, die Beschreibung und ein Bild automatisch abgefragt und gespeichert.
   </p>
 </div>
 
@@ -51,7 +45,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#projekt-setup">Projekt Setup</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -74,7 +68,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+## Projekt Setup
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
