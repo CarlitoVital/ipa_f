@@ -1,22 +1,17 @@
-/* @font-face {
-  font-family: 'Cera Pro';
-  src: url('../fonts/cera_pro_bold.eot'), url('../fonts/cera_pro_bold.ttf'), url('../fonts/cera_pro_bold.woff'), url('../fonts/cera_pro_bold.woff2'), url('../fonts/cera_pro_light.eot'), url('../fonts/cera_pro_light.ttf'), url('../fonts/cera_pro_light.woff'), url('../fonts/cera_pro_light.woff2') 
-} */
-
 @font-face{
 	font-family: 'CeraPRO';
-	src: url('/assets/fonts/34BEC4_0_0.eot');
-	src: url('/assets/fonts/34BEC4_0_0.eot?#iefix') format('embedded-opentype'),
-		 url('/assets/fonts/34BEC4_0_0.woff2') format('woff2'),
-		 url('/assets/fonts/34BEC4_0_0.woff') format('woff'),
-		 url('/assets/fonts/34BEC4_0_0.ttf') format('truetype');
+	src: url('../fonts/34BEC4_0_0.eot');
+	src: url('../fonts/34BEC4_0_0.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/34BEC4_0_0.woff2') format('woff2'),
+		 url('../fonts/34BEC4_0_0.woff') format('woff'),
+		 url('../fonts/34BEC4_0_0.ttf') format('truetype');
     font-weight: 700;     
 }
 
 @font-face {
     font-family: 'CeraPRO';
-    src: url('/assets/fonts/CeraPro-Regular.eot');
-    src: url('/assets/fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),url('/assets/fonts/CeraPro-Regular.woff2') format('woff2'),url('/assets/fonts/CeraPro-Regular.woff') format('woff'),url('/assets/fonts/CeraPro-Regular.ttf') format('truetype');
+    src: url('../fonts/CeraPro-Regular.eot');
+    src: url('../fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),url('../fonts/CeraPro-Regular.woff2') format('woff2'),url('../fonts/CeraPro-Regular.woff') format('woff'),url('../fonts/CeraPro-Regular.ttf') format('truetype');
     font-weight: 400;
 }
 
