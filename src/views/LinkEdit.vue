@@ -60,7 +60,7 @@
       </option>
       <!-- done! -->
     </select>
-    <button class="buttonSize buttonCreate" type="submit">Erstellen +</button>
+    <button class="buttonSize buttonCreate" type="submit">Aktuelisieren</button>
   </form>
 </template>
 
@@ -87,7 +87,7 @@ export default {
         title: this.link.attributes.title,
         description: this.link.attributes.description,
         image: this.link.attributes.image,
-        category: this.selectedCategory,
+        category_id: this.selectedCategory,
       };
       LinkService.putLink(link)
         .then((response) => {
@@ -126,7 +126,7 @@ export default {
       .then((response) => {
         // console.log("response", response);
         this.link = response.data.data;
-        this.selectedCategory = this.link.attributes.category.data?.id;
+        this.selectedCategory = this.link.attributes.category_id.data?.id;
       })
       .catch((error) => {
         console.log(error);

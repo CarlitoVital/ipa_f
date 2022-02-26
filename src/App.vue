@@ -65,6 +65,13 @@
 </template>
 
 <script>
+export default {
+  data() {
+    return {
+      burger: false,
+    };
+  },
+};
 </script>
 
 <style>

@@ -32,7 +32,7 @@
     </div>
     <div class="createCategoryContainer">
       <h2 class="createCategoryTitle">Kategorie</h2>
-      <select id="category" name="category" v-model="link.category">
+      <select id="category" name="category" v-model="link.category_id">
         <option
           :value="category.id"
           v-for="category in categories"
@@ -59,7 +59,7 @@ export default {
         title: "",
         description: "",
         url: "",
-        category: "",
+        category_id: "",
         image: "",
       },
       categories: [],
@@ -71,6 +71,7 @@ export default {
     createLink() {
       LinkService.postLink(this.link)
         .then(() => {
+          console.log("LinkCreate.vue WHHHHYYY", this.link);
           this.$router.push("/");
         })
         // if the post doesn't work the error will be catched and showed in the console
