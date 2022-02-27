@@ -90,6 +90,7 @@
     <LinkCard v-for="link in filteredLinks" :key="link.id" :link="link" />
   </div>
   <div class="linkList loadingSpinner" v-else>
+    <p class="loadingSpinnerText">Inhalte werden geladen.</p>
     <div class="lds-spinner">
       <div></div>
       <div></div>
