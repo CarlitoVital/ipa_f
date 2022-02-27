@@ -238,12 +238,14 @@ body {
   width: 100%;
 }
 .burgerOpen span:first-of-type{
+  margin-top: 0.8rem;
   transform: rotate(45deg);
   height: 0.3rem;
   background: black;
   width: 100%;
 }
 .burgerOpen span:last-of-type{
+  margin-bottom: 0.8rem;
   transform: rotate(-45deg);
   height: 0.3rem;
   background: black;

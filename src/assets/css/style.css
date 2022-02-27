@@ -350,6 +350,7 @@ body {
 }
 
 .burgerOpen span:first-of-type {
+  margin-top: 0.8rem;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   height: 0.3rem;
@@ -358,6 +359,7 @@ body {
 }
 
 .burgerOpen span:last-of-type {
+  margin-bottom: 0.8rem;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   height: 0.3rem;
