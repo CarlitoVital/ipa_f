@@ -42,11 +42,6 @@
           align-items: center;
 }
 
-.loadingSpinnerText {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
 .lds-spinner {
   color: official;
   display: inline-block;
