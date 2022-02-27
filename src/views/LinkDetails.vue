@@ -7,7 +7,7 @@
       class="cardImage"
     />
     <div class="cardContent">
-      <div class="cardTitleContainer">
+      <div class="cardTitleContainer detailsCardDescriptionMargin">
         <h2 class="cardDescription">{{ link.attributes.description }}</h2>
         <i
           :class="`${link.attributes.category_id.data?.attributes?.icon} cardIcon`"
@@ -18,19 +18,24 @@
           clicks:<br />
           {{ link.attributes.clicks }}
         </p>
-        <router-link
-          class="buttonSize buttonGrey buttonDetails"
-          :to="{ name: 'LinkDelete', params: { id: link.id } }"
-          >Löschen</router-link
-        >
-        <router-link
-          class="buttonSize buttonGrey buttonDetails"
-          :to="{ name: 'LinkEdit', params: { id: link.id } }"
-          >Editieren</router-link
-        >
-        <a :href="link.attributes.url" class="buttonSize buttonPink buttonSite">
-          zur Seite
-        </a>
+        <div class="cardButtonsFlexBox">
+          <router-link
+            class="buttonSize buttonGrey buttonDetails"
+            :to="{ name: 'LinkDelete', params: { id: link.id } }"
+            >Löschen</router-link
+          >
+          <router-link
+            class="buttonSize buttonGrey buttonDetails"
+            :to="{ name: 'LinkEdit', params: { id: link.id } }"
+            >Editieren</router-link
+          >
+          <a
+            :href="link.attributes.url"
+            class="buttonSize buttonPink buttonSite"
+          >
+            zur Seite
+          </a>
+        </div>
       </div>
     </div>
   </div>

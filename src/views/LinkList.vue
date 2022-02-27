@@ -4,9 +4,9 @@
       <div class="filterDropdown" v-show="toggle">
         <!-- v-if="dropdownStatus === 1" -->
         <div class="linkSearchContainer">
-          <label class="linkInputLabel" for="link">Suche</label>
+          <label class="linkSearchInputLabel" for="link">Suche</label>
           <input
-            class="linkInput"
+            class="linkSearchInput"
             id="search"
             type="text"
             v-model="search"
@@ -15,7 +15,11 @@
         </div>
         <h2 class="filterTitle">Kategorie</h2>
         <div class="categoryFilter">
-          <select name="category" v-model="selectedCategory">
+          <select
+            class="selectCategoryFilter"
+            name="category"
+            v-model="selectedCategory"
+          >
             <option value="-1">ALL</option>
             <option
               :value="category.id"
@@ -71,8 +75,12 @@
       @toggle-menu="menuActive = !menuActive"
       :active="menuActive"
     ></Burger> -->
-
-    <button class="filterTitle" @click="toggle = !toggle">Filter</button>
+    <button class="filterTitle" v-if="toggle" @click="toggle = !toggle">
+      Filter schliessen
+    </button>
+    <button class="filterTitle" v-else @click="toggle = !toggle">
+      Filter öffnen
+    </button>
     <!-- <FilterDropdown /> -->
   </div>
 
@@ -80,6 +88,22 @@
   <p class="startText"></p>
   <div class="linkList" v-if="links">
     <LinkCard v-for="link in filteredLinks" :key="link.id" :link="link" />
+  </div>
+  <div class="linkList">
+    <div class="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 </template>
 
@@ -256,10 +280,10 @@ export default {
 
 <style scoped>
 .bounce-enter-active {
-  animation: bounce-in 0.75s;
+  animation: bounce-in 0.6s;
 }
 .bounce-leave-active {
-  animation: bounce-in 1s reverse;
+  animation: bounce-in 0.6s reverse;
 }
 @keyframes bounce-in {
   0% {
