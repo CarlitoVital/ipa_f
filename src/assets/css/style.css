@@ -175,6 +175,7 @@
 main {
   margin: 0 auto;
   width: 120rem;
+  min-height: 100vh;
 }
 
 h1 {
