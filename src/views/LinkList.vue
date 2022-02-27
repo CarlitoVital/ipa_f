@@ -89,7 +89,7 @@
   <div class="linkList" v-if="links">
     <LinkCard v-for="link in filteredLinks" :key="link.id" :link="link" />
   </div>
-  <div class="linkList">
+  <div class="linkList loadingSpinner" v-else>
     <div class="lds-spinner">
       <div></div>
       <div></div>

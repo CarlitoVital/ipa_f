@@ -27,6 +27,12 @@
 
 /* loading spinnner */
 
+.loadingSpinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .lds-spinner {
   color: official;
   display: inline-block;
