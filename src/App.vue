@@ -41,8 +41,12 @@
         <img class="logoAdvery" src="@/assets/logos/logo_advery.svg" />
       </div>
       <div class="burgerContainer">
-        <button class="burger" @click="burger = !burger">
+        <button class="burger" @click="burger = !burger" v-if="burger">
           <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <button class="burger burgerOpen" @click="burger = !burger" v-else>
           <span></span>
           <span></span>
         </button>
