@@ -23,17 +23,19 @@
 
   <!-- mobil nav -->
   <div class="mobilNavContainer">
-    <div class="mobilNavLinkContainer" v-show="burger">
-      <router-link class="mobilNavMainLinks" :to="{ name: 'LinkList' }"
-        >Übersicht</router-link
-      >
-      <router-link class="mobilNavMainLinks" :to="{ name: 'Info' }"
-        >Info</router-link
-      >
-      <router-link class="mobilNavMainLinks" :to="{ name: 'LinkCreate' }"
-        >Erstellen +</router-link
-      >
-    </div>
+    <Transition name="burger">
+      <div class="mobilNavLinkContainer" v-show="burger">
+        <router-link class="mobilNavMainLinks" :to="{ name: 'LinkList' }"
+          >Übersicht</router-link
+        >
+        <router-link class="mobilNavMainLinks" :to="{ name: 'Info' }"
+          >Info</router-link
+        >
+        <router-link class="mobilNavMainLinks" :to="{ name: 'LinkCreate' }"
+          >Erstellen +</router-link
+        >
+      </div>
+    </Transition>
     <div class="mobilNavBurgerContainer">
       <div class="mobilLogoAdveryContainer">
         <img class="logoAdvery" src="@/assets/logos/logo_advery.svg" />
@@ -75,4 +77,23 @@ export default {
 </script>
 
 <style>
+.burger-enter-active {
+  animation: bounce-in 0.75s;
+}
+.burger-leave-active {
+  animation: bounce-in 1s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    /* transform: scale(0); */
+    transform: translateY(-100px);
+  }
+  50% {
+    /* transform: scale(1.1); */
+  }
+  100% {
+    /* transform: scale(1); */
+    transform: translateY(0);
+  }
+}
 </style>

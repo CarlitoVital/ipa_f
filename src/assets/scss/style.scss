@@ -1,17 +1,17 @@
 @font-face{
 	font-family: 'CeraPRO';
-	src: url('../fonts/34BEC4_0_0.eot');
-	src: url('../fonts/34BEC4_0_0.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/34BEC4_0_0.woff2') format('woff2'),
-		 url('../fonts/34BEC4_0_0.woff') format('woff'),
-		 url('../fonts/34BEC4_0_0.ttf') format('truetype');
+	src: url('/src/assets/fonts/34BEC4_0_0.eot');
+	src: url('/src/assets/fonts/34BEC4_0_0.eot?#iefix') format('embedded-opentype'),
+		 url('/src/assets/fonts/34BEC4_0_0.woff2') format('woff2'),
+		 url('/src/assets/fonts/34BEC4_0_0.woff') format('woff'),
+		 url('/src/assets/fonts/34BEC4_0_0.ttf') format('truetype');
     font-weight: 700;     
 }
 
 @font-face {
     font-family: 'CeraPRO';
-    src: url('../fonts/CeraPro-Regular.eot');
-    src: url('../fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),url('../fonts/CeraPro-Regular.woff2') format('woff2'),url('../fonts/CeraPro-Regular.woff') format('woff'),url('../fonts/CeraPro-Regular.ttf') format('truetype');
+    src: url('/src/assets/fonts/CeraPro-Regular.eot');
+    src: url('/src/assets/fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),url('/src/assets/fonts/CeraPro-Regular.woff2') format('woff2'),url('/src/assets/fonts/CeraPro-Regular.woff') format('woff'),url('/src/assets/fonts/CeraPro-Regular.ttf') format('truetype');
     font-weight: 400;
 }
 
@@ -31,36 +31,6 @@ main {
   margin: 0 auto;
   width: 120rem;
 }
-
-/* nav */
-
-/* .navContainer {
-  z-index: 200;
-  height: 100px;
-  width: 100%;
-  background: #f3efa0;
-  position: fixed;
-  transform: translate3d(0, 0, 0);
-  transition: 0.1s all ease-out;
-}
-
-.navContainer.hidden-navbar {
-  box-shadow: none;
-  transform: translate3d(0, -100%, 0);
-} */
-
-/* .navContainer {
-  position: fixed;
-  z-index: 100;
-} */
-
-/* 
-.filterContainer {
-  margin-top: 10rem;
-  position: fixed;
-  z-index: 50;
-} */
-
 
 h1 {
   margin: 8rem 0;
