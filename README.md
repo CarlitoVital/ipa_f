@@ -160,6 +160,7 @@ Aktuelle Version 1.0
 
 ### Version 2.0
 
+- Suche auch nach Beschreibung
 - Filter ausbauen
 - Klick Ranking ein- und ausschaltbar
 - nach mehrere Kategorien filtern
