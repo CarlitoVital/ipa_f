@@ -1,8 +1,8 @@
 <template>
   <div class="filterContainer">
     <Transition name="bounce">
+      <!-- dropdown filter -->
       <div class="filterDropdown" v-show="toggle">
-        <!-- v-if="dropdownStatus === 1" -->
         <div class="linkSearchContainer">
           <label class="linkSearchInputLabel" for="link">Suche</label>
           <input
@@ -29,52 +29,10 @@
               {{ category.attributes.name }}
             </option>
           </select>
-          <!-- try to filter links with inputs -->
-          <!-- <div class="filteredButton">
-        <input
-          type="radio"
-          id="allCategories"
-          v-model="selectedCategory"
-          :value="-1"
-          name="ALL"
-        />
-        <label for="allCategories">ALL</label>
-      </div>
-      <div
-        class="filterButton"
-        v-for="category in categories"
-        :key="category.id"
-      >
-        <input
-          type="radio"
-          v-model="selectedCategory"
-          :id="category.attributes.name"
-          :value="category.id"
-        />
-        <i :class="`${category.attributes.icon} filterIcon`"></i>
-        <label
-          :for="category.attributes.name"
-          :name="category.attributes.name"
-          >{{ category.attributes.name }}</label
-        >
-      </div> -->
         </div>
-
-        <!-- <h2 class="orderByClicksTitle">Sortiere nach Klicks</h2>
-      <button
-        type="button"
-        @click="rankLinks"
-        class="buttonSize buttonPink buttonDetails"
-      >
-        Ranking
-      </button> -->
       </div>
     </Transition>
-
-    <!-- <Burger
-      @toggle-menu="menuActive = !menuActive"
-      :active="menuActive"
-    ></Burger> -->
+    <!-- buttons for filter dropdown -->
     <button class="filterTitle" v-if="toggle" @click="toggle = !toggle">
       Filter schliessen
     </button>
@@ -133,12 +91,6 @@ export default {
     };
   },
   computed: {
-    // filteredLinks: function () {
-    //   let links = this.rankedLinksByClicks(this.links);
-    //   links = this.filteredLinksByCategory(links);
-    //   links = this.filteredLinksByTitle(links);
-    //   return links;
-    // },
     filteredLinks: function () {
       let links = this.filteredLinksByCategory(this.links);
       links = this.filteredLinksByTitle(links);
@@ -149,11 +101,6 @@ export default {
       let links = this.rankedLinksByClicks(this.links);
       return links;
     },
-
-    // rankLinks: function () {
-    //   this.links | sortBy("created");
-    //   return links;
-    // },
   },
   methods: {
     filteredLinksByCategory(links) {
@@ -180,85 +127,9 @@ export default {
 
       return filteredLinksbyTitle;
     },
-
-    // rankedLinksByClicks(links) {
-
-    //   link.sort((a, b) => b - a);
-    //   return links;
-    // },
-
-    // rankedLinksByClicks(links) {
-    //   links.sort((link) =>
-    //     link.attributes.clicks > link.attributes.clicks ? 1 : -1
-    //   );
-    //   return links;
-    // },
-
-    // IDEA 1
-    // sortByClicks(links) {
-    //   links.sort((a, b) => (a[clicks] < b[clicks] ? -1 : 1));
-    //   return links;
-    // },
-
-    // IDEA 2
-    // sortFunc: function () {
-    //   return this.links.slice().sort(function (a, b) {
-    //     return a.clicks > b.clicks ? 1 : -1;
-    //   });
-    // },
-
-    // IDEA 3
-    // rankedLinksByClicks: function () {
-    //   function compare(a, b) {
-    //     if (a.name < b.name) return -1;
-    //     if (a.name > b.name) return 1;
-    //     return 0;
-    //   }
-
-    //   return this.arrays.sort(compare);
-    // },
-
-    // IDEA 4
-    // rankedLinksByClicks(links) {
-    //   var clicks = this.links.link.attributes.clicks;
-    //   var rankedLinksByClicks = links.ranker((links) => {
-    //     return links.orderBy(clicks);
-    //   });
-
-    //   return rankedLinksByClicks;
-    // },
-
-    // sortLinks(links) {
-    //   return links.orderBy(this.clicks);
-    // },
-
-    // dropdownClick() {
-    //   if (this.dropdownStatus === 0) {
-    //     this.dropdownStatus === 1;
-    //   } else {
-    //     this.dropdownStatus === 0;
-    //   }
-    //   console.log(this.dropdownStatus);
-    // },
-
-    // updateLink() {
-    //   const link = {
-    //     clicks: this.link.attributes.clicks,
-    //   };
-    //   LinkService.putLink(link)
-    //     .then((response) => {
-    //       console.log(response);
-    //       this.$router.push("/");
-    //     })
-    //     .catch((error) => {
-    //       this.error = error;
-    //     });
-    // },
-
-    // functions get API (get data from strapi)
   },
   created() {
-    console.log("Hello");
+    // functions get API (get data from strapi)
     LinkService.getLinks()
       .then((response) => {
         console.log(response);
@@ -267,6 +138,7 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+    // functions get API (get data from strapi)
     CategoryService.getCategories()
       .then((response) => {
         this.categories = response.data.data;

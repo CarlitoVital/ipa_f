@@ -41,6 +41,7 @@
         <img class="logoAdvery" src="@/assets/logos/logo_advery.svg" />
       </div>
       <div class="burgerContainer">
+        <!-- burger -->
         <button
           class="burger burgerOpen"
           @click="burger = !burger"

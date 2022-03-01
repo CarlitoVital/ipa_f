@@ -175,7 +175,6 @@
 main {
   margin: 0 auto;
   width: 120rem;
-  min-height: 100vh;
 }
 
 h1 {
@@ -203,6 +202,7 @@ a, a:hover, a:focus, a:active {
 
 body {
   font-family: "Cera Pro", sans-serif;
+  min-height: 100vh;
 }
 
 /* navigation */
@@ -245,12 +245,12 @@ body {
 }
 
 .navMainLinks {
-  padding: 6px 0;
+  padding: 4px 0;
 }
 
 .navMainLinks:hover {
   border-bottom: 2px solid black;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
 }
 
 .logoAdveryContainer {
@@ -704,6 +704,7 @@ body {
 }
 
 .linkSearchInput {
+  border: 1px solid black;
   height: 4rem;
   padding-left: 2rem;
 }
@@ -858,6 +859,7 @@ body {
 
 .createCategoryTitle {
   font-size: 2rem;
+  margin-bottom: 4rem;
 }
 
 .createSingleCategoryContainer {
@@ -949,6 +951,7 @@ footer {
 @media only screen and (max-width: 1200px) {
   main {
     width: 100%;
+    min-height: 100vh;
   }
   /* nav */
   .navbar {
@@ -1002,9 +1005,6 @@ footer {
   }
   .linkInputContainer {
     margin-bottom: 4rem;
-  }
-  .linkInputContainer:last-of-type {
-    margin-bottom: 0;
   }
   /* button */
   .buttonSize {

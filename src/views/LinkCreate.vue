@@ -32,7 +32,12 @@
     </div>
     <div class="createCategoryContainer">
       <h2 class="createCategoryTitle">Kategorie</h2>
-      <select id="category" name="category" v-model="link.category_id">
+      <select
+        id="category"
+        class="selectCategoryFilter"
+        name="category"
+        v-model="link.category_id"
+      >
         <option
           :value="category.id"
           v-for="category in categories"

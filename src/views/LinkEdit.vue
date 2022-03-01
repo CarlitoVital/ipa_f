@@ -47,7 +47,7 @@
     </div>
     <select
       id="category"
-      class="form-select"
+      class="form-select selectCategoryFilter"
       name="category"
       v-model="selectedCategory"
     >
