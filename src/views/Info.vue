@@ -1,7 +1,7 @@
 <template>
   <h1>Info</h1>
   <div class="startTextContainer">
-    <p class="startTextTitle">«Wer nichts weiß, muss alles glauben.»</p>
+    <p class="startTextTitle">«Wer nichts weiss, muss alles glauben.»</p>
     <p class="startText">
       Marie von Ebner-Eschenbach<br />
       (1830 - 1916), Marie Freifrau Ebner von Eschenbach, österreichische

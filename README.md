@@ -154,7 +154,7 @@ Aktuelle Version 1.0
 - Links können editiert und gelöscht werden
 - Detailseite für jeden Link
 - Suche nach Linktiteln
-- Filter nach Kategorien, nur jeweils eine Kategorie geleichzeitig
+- Filter nach Kategorien, nur jeweils eine Kategorie gleichzeitig
 - Klicks werden gezählt
 - Ranking nach Anzahl der Klicks
 
@@ -166,20 +166,19 @@ Aktuelle Version 1.0
 - nach mehrere Kategorien filtern
 - Nach Klicks filtern mit einem Schieberegler
 - Login, Passwörter und Benutzernamen vor definiert
-- Like Funktion
+- Like-Funktion
 
 ### Version 3.0
 
-- Nutzer können selber Benutzer erstellen
-- Nutzer können Passwörter und Benutzernamen ändern
-- Nur E-Mails gewissen Endungen können Accounts erstellen
+- Nutzer können selber Accounts erstellen
+- Nutzer können Passwörter und Benutzernamen selber ändern
+- Nur bestimmte E-Mails können Accounts erstellen
 
 ### Version 4.0
 
 - Benutzergruppen
 - Verschiedene Bereiche für Links
-- Mann kann verschiedene Gruppen angehören, die unterschiedeliche Berechtigungen haben
-  Jeder
+- Mann kann verschiedene Gruppen angehören, die unterschiedeliche Berechtigungen haben alle
 - Jeder Nutzer kann eigene Bereiche erstellen, zu denen er andere Nutzer einladen kann.
 - Ideen-Seite: Die Nutzer können Vorschläge für zukünftige Funktionen posten und diese liken und kommentieren.
 
